@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          let n = parseInt(prompt("Enter the number of the elements : "))
+        let ar = [];
+
+        let sum=0;
+
+        for(i=0;i<n;i++)
+    {
+        ar[i] = Number(prompt("Enter the elements :"));
+        sum = sum + ar[i];
+    }
+    let min = ar[0];
+    let max = ar[0];
+
+    for(i=1;i<n;i++)
+    {
+        if(ar[i]>max)
+    {
+        max = ar[i];
+    }
+    
+        if(ar[i]<min)
+    {
+        min = ar[i];
+    }
+    }
+
+    console.log("Sum = " ,sum  );
+    console.log("Maximum = ", max  );
+    console.log("Minimum = " , min );
+    </script>
+</body>
+</html>

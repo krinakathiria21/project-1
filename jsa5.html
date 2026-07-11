@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n1 = parseInt(prompt("Enter the number of first the elements : "));
+        let n2 = parseInt(prompt("Enter the number of second the elements : "));
+
+
+        let a=[];
+        let b=[];
+        let c=[];
+
+        for( i=0;i<n1;i++)
+    {
+        a[i] = Number(prompt("Enter the first array elements"));
+    }
+
+     for( i=0;i<n2;i++)
+    {
+        b[i] = Number(prompt("Enter the second array elements"));
+    }
+
+    for(i=0;i<n1;i++)
+    {
+        c[i] = a[i];
+    }
+
+     for(i=0;i<n2;i++)
+    {
+        c[n1 + i] = b[i];
+    }
+
+    
+    console.log("Merged Array :");
+
+    for(i=0;i<n1;i++)
+    {
+        console.log("the postion a[" + i + "]: " + a[i]);
+    }
+
+    for(i=0;i<n2;i++)
+    {
+        console.log("the postion b[" + i + "]: " + b[i]);
+    }
+
+    for(i=0;i<n1+n2;i++)
+    {
+        console.log("the postion ar[" + i + "]: " + c[i]);
+    }
+    </script>
+</body>
+</html>

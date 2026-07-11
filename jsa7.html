@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          let n = parseInt(prompt("Enter the number of the elements : "))
+        let ar = [];
+
+          for( i=0;i<n;i++)
+    {
+        ar[i] = Number(prompt("Enter the elements :"))
+    }
+
+    let find = Number(prompt("Enter the find values :"))
+     let replace = Number(prompt("Enter the new values :"))
+
+     for(i=0;i<n;i++)
+     {
+        if(ar[i]==find)
+     {
+        ar[i]=replace;
+     }
+     }
+
+     console.log("Update array : ");
+
+     for(i=0;i<n;i++)
+    {
+        console.log( ar[i])
+    }
+    </script>
+</body>
+</html>

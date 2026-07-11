@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var n = parseInt(prompt("Enter the number :"))
+        var i , j ,prime;
+
+        document.write("Prime numbers from 1 to " + n + "are : <br> <br>")
+
+        for(i=2;i<=n;i++)
+    {
+        prime = 1;
+
+        for(j=2;j<i;j++)
+    {
+        if(i % j == 0)
+    {
+        prime = 0;
+        break ;
+    }
+    }
+    if(prime == 1)
+
+{
+    document.write( i + "  ");
+}    }
+    </script>
+</body>
+</html>

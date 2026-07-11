@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     let n = parseInt(prompt("Enter the number of the elements : "))
+        let ar = [];
+
+          for( i=0;i<n;i++)
+    {
+        ar[i] = Number(prompt("Enter the elements :"))
+    }
+
+    let pos = Number(prompt("Enter the position to insert (0 to " + n + ") : "));
+    let values = Number(prompt("Enter the values of the insert :"));
+
+    for( i=n;i > pos ; i--)
+    {
+        ar[i] = ar[i-1];
+    }
+
+    ar[pos] = values;
+    n++;
+
+    console.log("Array after insertion");
+
+    for(i=0;i<n;i++)
+    {
+        console.log( ar[i] );
+    }
+
+    let dpos = Number(prompt("Enter the position to delete (0 to " + ( n - 1) + "): "))
+
+    for(i=dpos;i<n-1;i++)
+    {
+        ar[i] = ar[i + 1];
+    }
+
+    n--;
+
+    console.log("Array after deletation  ");
+
+    for(i=0;i<n;i++)
+    {
+        console.log(ar[i] );
+    }
+    
+    </script>
+</body>
+</html>

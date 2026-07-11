@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let r = Number(prompt("Enter the Rows :"));
+        let c = Number(prompt("Enter the column :"));
+
+        let ar = [];
+
+        for(i =0 ;i<r;i++)
+    {
+        ar[i] = [];
+
+        for(j=0;j<c;j++)
+    {
+        ar[i][j] = Number(prompt("Enter the elements :"))
+        }
+    }
+
+    console.log("Row wise sum : ");
+
+    for(i=0;i<r;i++)
+    {
+        let sum = 0;
+
+        for( j=0;j<c;j++)
+    {
+        sum += ar[i][j];
+    }
+        console.log("row  : " + (i + 1) + " = " ,sum)
+    }
+
+    console.log("Column wise sum :");
+
+    for(j=0;j<c;j++)
+    {
+        let sum = 0;
+
+        for( i=0;i<r;i++)
+    {
+        sum += ar[i][j];
+    }
+        console.log("column : " + (j + 1) + " = " ,sum)
+    }
+    </script>
+</body>
+</html>

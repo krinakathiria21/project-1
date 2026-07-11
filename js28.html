@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <script>
+        var num = parseInt(prompt("Enter the number :"))
+        var temp = num
+        var rev = 0;
+
+        while(temp>0)
+     {
+        var rem = temp % 10;
+        rev = rev * 10 + rem;
+        temp = parseInt(temp / 10);
+     }
+     if(rev==num)
+     {
+        document.write(num + " is the pallindrome number")
+     }
+     else
+     {
+        document.write(num + " is the not pallindrome number")
+     }
+     </script>
+</body>
+</html>

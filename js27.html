@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num = parseInt(prompt("Enter the number :"))
+        var sum = 0;
+        var temp = num;
+
+        while(temp>0)
+    {
+        var rem = temp % 10;
+        sum = sum + (rem * rem * rem);
+        temp = parseInt(temp / 10)
+    }
+    if(num==sum)
+{
+    document.write(num +" is the armstong")
+}
+else
+{
+    document.write(num + " is the not armstong")
+}
+
+    </script>
+</body>
+</html>

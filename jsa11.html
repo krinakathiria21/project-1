@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(prompt("Enter the number of the elements : "))
+        let ar = [];
+        let temp;
+
+          for(i=0;i<n;i++)
+    {
+        ar[i] = Number(prompt("Enter the elements :"))
+    }
+    for(i=0;i<n-1;i++)
+    {
+        for(j=i+1;j<n;j++)
+    {
+        if(ar[i] > ar[j])
+    {
+        temp = ar[i];
+        ar[i] = ar[j];
+        ar[j] = temp;
+    }
+    }
+    }
+
+    console.log("Array in ascending orders");
+
+    console.log("Update array: ");
+
+     for(i=0;i<n;i++)
+    {
+        console.log( ar[i] )
+    }
+    </script>
+</body>
+</html>

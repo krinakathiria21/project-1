@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var name = prompt("Enter the employee name :");
+        var basic = Number(prompt("Enter the basic salary :"))
+
+        var hra = basic * 20 / 100;
+        var da = basic * 10 / 100;
+        var ta = basic * 5 / 100;
+        var gross = basic + hra + da + ta;
+
+        document.write("<h2>Employee salary Details : </h2>");
+        document.write("Employee NAME = " + name + " <br> ");
+        document.write("Basic salary = " + basic + " <br> ");
+        document.write("HRA = " + hra + " <br> ");
+        document.write("DA = " + da + " <br> ");
+         document.write("TA = " + ta + " <br> ");
+          document.write("Gross salary  = " + gross + " <br> ");
+    </script>
+</body>
+</html>

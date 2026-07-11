@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var name = prompt("Enter the name of the student :");
+        var sub1 = parseInt(prompt("Enter the marks :"));
+        var sub2 = parseInt(prompt("Enter the marks :"));
+        var sub3 = parseInt(prompt("Enter the marks :"));
+        var sub4 = parseInt(prompt("Enter the marks :"));
+        var sub5 = parseInt(prompt("Enter the marks :"));
+
+        var total =  sub1 + sub2 + sub3 + sub4 + sub5;
+        var per = (total / 500) * 100;
+
+       
+
+        var max = sub1;
+        if(sub2 > max){
+            max = sub2;
+        }
+        if(sub3 > max){
+            max = sub3;
+        }
+        if(sub4 > max){
+            max = sub4;
+        }
+        if(sub5 > max){
+            max = sub5;
+        }
+
+        var min = sub1;
+        if(sub2 < min){
+            min = sub2;
+        }
+        if(sub3 < min){
+            min = sub3;
+        }
+        if(sub4 < min){
+            min = sub4;
+        }
+        if(sub5 < min){
+            min = sub5;
+        }
+
+        var result
+        if(sub1 < 35 || sub2 < 35 || sub3 < 35 || sub4 < 35 || sub5 < 35) {
+            result = "Fail";
+        } else {
+            result = "Pass";
+        }
+
+        var grade;
+        if(per >= 90) {
+            grade = "A";
+        } else if(per >= 80) {
+            grade = "B";
+        } else if(per >= 70) {
+            grade = "C";
+        } else if(per >= 60) {
+            grade = "D";
+        } else {
+            grade = "F";
+        }
+
+        document.write("<h2>Student result</h2>");
+        document.write("<h2>Students name : " + name + "</h2>");
+        document.write("Enter the marks of the sub1 :" + sub1 + "<br>");
+        document.write("Enter the marks of the sub2 :" + sub2 + "<br>");
+        document.write("Enter the marks of the sub3 :" + sub3 + "<br>");
+        document.write("Enter the marks of the sub4 :" + sub4 + "<br>");
+        document.write("Enter the marks of the sub5 :" + sub5 + "<br>");
+        document.write("Total marks : " + total + "<br>");
+        document.write("Percentage : " + per + "<br>");
+        document.write("Maximum marks : " + max + "<br>");
+        document.write("Minimum marks : " + min + "<br>");  
+        document.write("Result : " + result + "<br>");
+        document.write("Grade : " + grade + "<br>");       
+    </script>
+</body>
+</html>
