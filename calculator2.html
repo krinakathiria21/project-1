@@ -107,64 +107,12 @@
     </div>
 
     <script>
-        let firstNumber = "";
-        let secondNumber = "";
-        let opt = "";
+        let currentop = "";
+        let currentno = "";
+        let number = "";
 
-        function num(value) {
-            if (opt == "") {
-                firstNumber += value;
-                document.getElementById("display").value = firstNumber;
-            }
-            else {
-                secondNumber += value;
-                document.getElementById("display").value = firstNumber + opt + secondNumber;
-            }
-        }
-
-        function operation(op) {
-            opt = op;
-            document.getElementById("display").value = firstNumber + opt;
-        }
-
-        function calculate() {
-            let a = parseFloat(firstNumber);
-            let b = parseFloat(secondNumber);
-
-            let ans;
-
-            if (opt == "+") {
-                ans = a + b;
-            }
-            else if (opt == "-") {
-                ans = a - b;
-            }
-            else if (opt == "*") {
-                ans = a * b;
-            }
-            else if (opt == "/") {
-                ans = a / b;
-            }
-            else if (opt == "%") {
-                ans = a % b;
-            }
-
-
-            document.getElementById("display").value = ans;
-
-            firstNumber = ans.toString();
-            secondNumber = "";
-            opt = "";
-        }
-
-        function clearDisplay() {
-            firstNumber = "";
-            secondNumber = "";
-            opt = "";
-
-            document.getElementById("display").value = "";
-        }
-    </script>
+        
+        </script>
 </body>
 
 </html>
