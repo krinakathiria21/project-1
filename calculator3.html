@@ -123,9 +123,9 @@ button:hover{
     
     function calculate()
 {
-    let numbers = expression.split(/[\+\-]/);
+    let numbers = expression.split(/[\+\-\*\/\%]/);
 
-    let operators = expression.match(/[\+\-]/g);
+    let operators = expression.match(/[\+\-\*\/\%]/g);
 
     let result = Number(numbers[0]);
 
@@ -141,6 +141,19 @@ button:hover{
             {
                 result = result - Number(numbers[i+1]);
             }
+            else if(operators[i] == "*")
+            {
+                result = result * Number(numbers[i+1]);
+            }
+            else if(operators[i] == "/")
+            {
+                result = result / Number(numbers[i+1]);
+            }
+            else if(operators[i] == "%")
+            {
+                result = result % Number(numbers[i+1]);
+            }
+            
         }
     }
 
