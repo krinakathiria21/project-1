@@ -1,220 +1,201 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Tic Tac Toe</title>
+    <title>Tic Tac Toe</title>
 
-<style>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #87CEEB;
+            font-family: Arial;
+        }
 
-body{
-    margin:0;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    background:#87CEEB;
-    font-family:Arial;
-}
+        .container {
+            text-align: center;
+        }
 
-.container{
-    text-align:center;
-}
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            gap: 10px;
+            margin: 20px;
+        }
 
-.board{
-    display:grid;
-    grid-template-columns:repeat(3,100px);
-    gap:10px;
-    margin:20px;
-}
+        button {
+            width: 100px;
+            height: 100px;
+            font-size: 40px;
+            border: none;
+            background: white;
+            cursor: pointer;
+            border-radius: 10px;
+        }
 
-button{
-    width:100px;
-    height:100px;
-    font-size:40px;
-    border:none;
-    background:white;
-    cursor:pointer;
-    border-radius:10px;
-}
+        button:hover {
+            background: #dddddd;
+        }
 
-button:hover{
-    background:#dddddd;
-}
+        #message {
+            font-size: 25px;
+            font-weight: bold;
+        }
 
-#message{
-    font-size:25px;
-    font-weight:bold;
-}
-
-.restart{
-    width:150px;
-    height:50px;
-    font-size:20px;
-    margin-top:20px;
-}
-
-</style>
+        .restart {
+            width: 150px;
+            height: 50px;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
 
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-<h1>Tic Tac Toe</h1>
+        <h1>Tic Tac Toe</h1>
 
-<div class="board">
+        <div class="board">
 
-<button id="b0" onclick="play(0)"></button>
-<button id="b1" onclick="play(1)"></button>
-<button id="b2" onclick="play(2)"></button>
+            <button id="b0" onclick="play(0)"></button>
+            <button id="b1" onclick="play(1)"></button>
+            <button id="b2" onclick="play(2)"></button>
 
-<button id="b3" onclick="play(3)"></button>
-<button id="b4" onclick="play(4)"></button>
-<button id="b5" onclick="play(5)"></button>
+            <button id="b3" onclick="play(3)"></button>
+            <button id="b4" onclick="play(4)"></button>
+            <button id="b5" onclick="play(5)"></button>
 
-<button id="b6" onclick="play(6)"></button>
-<button id="b7" onclick="play(7)"></button>
-<button id="b8" onclick="play(8)"></button>
+            <button id="b6" onclick="play(6)"></button>
+            <button id="b7" onclick="play(7)"></button>
+            <button id="b8" onclick="play(8)"></button>
 
-</div>
+        </div>
 
-<h2 id="message">Player X Turn</h2>
+        <h2 id="message">Player X Turn</h2>
 
-<button class="restart" onclick="restartGame()">Restart</button>
+        <button class="restart" onclick="restartGame()">Restart</button>
 
-</div>
+    </div>
 
-<script>
+    <script>
 
-let board=["","","","","","","","",""];
+        let board = ["", "", "", "", "", "", "", "", ""];
 
-let currentPlayer="X";
+        let currentPlayer = "X";
 
-let count=0;
+        let count = 0;
 
-let gameOver=false;
+        let gameOver = false;
 
-function play(index)
-{
+        function play(index) {
 
-    if(gameOver==true)
-    {
-        return;
-    }
+            if (gameOver == true) {
+                return;
+            }
 
-    if(board[index]!="")
-    {
-        return;
-    }
+            if (board[index] != "") {
+                return;
+            }
 
-    board[index]=currentPlayer;
+            board[index] = currentPlayer;
 
-    document.getElementById("b"+index).innerHTML=currentPlayer;
+            document.getElementById("b" + index).innerHTML = currentPlayer;
 
-    count++;
+            count++;
 
-    checkWinner();
+            checkWinner();
 
-    if(gameOver==false)
-    {
+            if (gameOver == false) {
 
-        if(currentPlayer=="X")
-        {
-            currentPlayer="O";
+                if (currentPlayer == "X") {
+                    currentPlayer = "O";
+                }
+                else {
+                    currentPlayer = "X";
+                }
+
+                document.getElementById("message").innerHTML = "Player " + currentPlayer + " Turn";
+
+            }
+
         }
-        else
-        {
-            currentPlayer="X";
+
+        function checkWinner() {
+
+            if (board[0] != "" && board[0] == board[1] && board[1] == board[2]) {
+                winner();
+            }
+
+            else if (board[3] != "" && board[3] == board[4] && board[4] == board[5]) {
+                winner();
+            }
+
+            else if (board[6] != "" && board[6] == board[7] && board[7] == board[8]) {
+                winner();
+            }
+
+            else if (board[0] != "" && board[0] == board[3] && board[3] == board[6]) {
+                winner();
+            }
+
+            else if (board[1] != "" && board[1] == board[4] && board[4] == board[7]) {
+                winner();
+            }
+
+            else if (board[2] != "" && board[2] == board[5] && board[5] == board[8]) {
+                winner();
+            }
+
+            else if (board[0] != "" && board[0] == board[4] && board[4] == board[8]) {
+                winner();
+            }
+
+            else if (board[2] != "" && board[2] == board[4] && board[4] == board[6]) {
+                winner();
+            }
+
+            else if (count == 9) {
+                document.getElementById("message").innerHTML = "Game Draw";
+
+                gameOver = true;
+            }
+
         }
 
-        document.getElementById("message").innerHTML="Player "+currentPlayer+" Turn";
+        function winner() {
 
-    }
+            document.getElementById("message").innerHTML = "Player " + currentPlayer + " Wins";
 
-}
+            gameOver = true;
 
-function checkWinner()
-{
+        }
 
-    if(board[0]!="" && board[0]==board[1] && board[1]==board[2])
-    {
-        winner();
-    }
+        function restartGame() {
 
-    else if(board[3]!="" && board[3]==board[4] && board[4]==board[5])
-    {
-        winner();
-    }
+            board = ["", "", "", "", "", "", "", "", ""];
 
-    else if(board[6]!="" && board[6]==board[7] && board[7]==board[8])
-    {
-        winner();
-    }
+            currentPlayer = "X";
 
-    else if(board[0]!="" && board[0]==board[3] && board[3]==board[6])
-    {
-        winner();
-    }
+            count = 0;
 
-    else if(board[1]!="" && board[1]==board[4] && board[4]==board[7])
-    {
-        winner();
-    }
+            gameOver = false;
 
-    else if(board[2]!="" && board[2]==board[5] && board[5]==board[8])
-    {
-        winner();
-    }
+            for (let i = 0; i < 9; i++) {
+                document.getElementById("b" + i).innerHTML = "";
+            }
 
-    else if(board[0]!="" && board[0]==board[4] && board[4]==board[8])
-    {
-        winner();
-    }
+            document.getElementById("message").innerHTML = "Player X Turn";
 
-    else if(board[2]!="" && board[2]==board[4] && board[4]==board[6])
-    {
-        winner();
-    }
+        }
 
-    else if(count==9)
-    {
-        document.getElementById("message").innerHTML="Game Draw";
-
-        gameOver=true;
-    }
-
-}
-
-function winner()
-{
-
-    document.getElementById("message").innerHTML="Player "+currentPlayer+" Wins";
-
-    gameOver=true;
-
-}
-
-function restartGame()
-{
-
-    board=["","","","","","","","",""];
-
-    currentPlayer="X";
-
-    count=0;
-
-    gameOver=false;
-
-    for(let i=0;i<9;i++)
-    {
-        document.getElementById("b"+i).innerHTML="";
-    }
-
-    document.getElementById("message").innerHTML="Player X Turn";
-
-}
-
-</script>
+    </script>
 
 </body>
+
 </html>
